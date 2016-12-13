@@ -74,6 +74,13 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+<% if notice.present? %> 
+<p class="alert alert-info"><%= notice %> </p><!--devise gem adjusments-->
+<%end%>
+<% if alert.present? %> 
+<p class="alert alert-danger"><%=alert%></p><!--devise gem adjusments-->
+<% end%>
+
 
 
 hello every body<br>

@@ -58,4 +58,6 @@ gem 'will_paginate-bootstrap'
 gem 'will_paginate'
 #
 gem 'simple_form'
+#
+gem 'devise', '>= 3.2.4'
 
