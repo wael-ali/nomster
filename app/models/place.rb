@@ -1,4 +1,6 @@
 class Place < ApplicationRecord
   belongs_to :user
-  validates :name, presence: true
+  validates :name, presence: true, length:{minimum:3,maximum:70}
+  validates :address, presence: true, length:{maximum:150}
+  validates :description, presence:true, length:{minimum: 10, maximum: 300}
 end
