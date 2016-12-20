@@ -4,6 +4,52 @@
 <i><%=@place.address%></i>
 <br><br>
 <p><%=@place.description%></p>
+
+<br><br>
+
+<!-- integrating the map -->
+
+  <body>
+    <div id="map"></div>
+
+      <!--if the ltd + lng are there then do the script that shows the map-->
+      <% if @place.latitude.present? && @place.longitude.present? %>
+
+    <script>
+
+      function initMap() {
+        var myLatLng = {lat: <%=@place.latitude%>, lng: <%=@place.longitude%>};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+    </script>
+
+    <%end%>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCK1l42Q-7su2oWvNZphtJjPGOBcorC8As&callback=initMap">
+    </script>
+
+
+    <br><br><br>
+
+
+
+
+
+
+
+
+
 <div class="pull-right">
 
 
@@ -13,6 +59,6 @@
 
   <%= link_to 'Detroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delet this??'}, class: 'btn btn-danger' %>
   <%end%>
-  
+
 </div>
 </div>
