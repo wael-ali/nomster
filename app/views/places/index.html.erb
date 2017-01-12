@@ -4,6 +4,13 @@
     <h1><%=link_to place.name, place_path(place) %></h1>
     <br>
     <h1><%= place.name %></h1>
+    <% if place.fotos.present?%>
+
+   <picture class="pull-right"> 
+   <%= image_tag place.fotos.last.picture%></picture>
+    
+    <%end%>
+
     <i><%= place.address %></i><br><br>
     <p><%= place.description %></p><br/>
 

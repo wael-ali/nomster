@@ -7,4 +7,8 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
 
+    resources :places do
+   resources :fotos, only: :create
+ end
+
 end

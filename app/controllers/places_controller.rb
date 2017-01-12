@@ -23,12 +23,12 @@ class PlacesController < ApplicationController
  
    if @place.valid?
 
-    redirect_to root_path
+      redirect_to root_path
     
-  else 
-    render :new, status: :unprocessable_entry
+     else 
+      render :new, status: :unprocessable_entry
+    end
   end
-end
 
 
 
@@ -40,8 +40,11 @@ end
 
     @place = Place.find(params[:id])
     @comment = Comment.new
-    
+    @foto = Foto.new
   end
+    
+
+      
 
   def edit
     @place = Place.find(params[:id])
@@ -53,6 +56,8 @@ end
     
   end
 
+
+
   def update
 
     @place = Place.find(params[:id])
@@ -61,15 +66,15 @@ end
       return render text: 'Not Allowed', status: :forbidden
       
     end
-    @place.update_attributes(place_params)
+           @place.update_attributes(place_params)
 
     if @place.valid?
-    redirect_to root_path
-  else 
-    render :edit, status: :unprocessable_entity
-  end
+          redirect_to root_path
+      else 
+      render :edit, status: :unprocessable_entity
+    end
+   end 
 
-  end
 
 
 
@@ -96,4 +101,5 @@ end
     params.require(:place).permit(:name, :description, :address)
     
   end
+
 end
