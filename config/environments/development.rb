@@ -3,16 +3,23 @@ Rails.application.configure do
 
   # settings that ables me sent emails feom my development environment
   #and this after creating the mailer
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "exmaple.com",
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: ENV['GMAIL_ADDRESS'],
-    password: ENV['GMAIL_PASSWORD']
-  }
+
+  # #### when u want to send live emails from the develoment 
+  # #### environment just uncomment the following code 
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+   #  address: "smtp.gmail.com",
+    # port: 587,
+    # domain: "exmaple.com",
+    # authentication: "plain",
+    # enable_starttls_auto: true,
+    # user_name: ENV['GMAIL_ADDRESS'],
+    # password: ENV['GMAIL_PASSWORD']
+  #}
+
+  # #### now the mailer uses the test mode so not to send emails
+  # #### rather make anote in our log files
+  config.action_mailer.delivery_metod = :test
 
   # devise gem adjustments
   config.action_mailer.default_url_options = {host: 'localhost', port: 3000}
