@@ -1,3 +1,54 @@
+
+<!--sleider-->
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+    <!--ruby code-->
+      <%= image_tag 'slider6.jpg' %>
+      <div class="carousel-caption">
+        the dragon nodels from china
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag 'slider7.jpg' %>
+      <div class="carousel-caption">
+        good pommes I prommise
+      </div>
+
+    </div>
+     <div class="item">
+      <%= image_tag 'slider8.jpg' %>
+      <div class="carousel-caption">
+        Find the best Hamburger ever
+      </div>
+
+    </div>
+    ...
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+<!--end of sleider-->
 <% @places.each do |place| %> 
 <div class="booyah-box col-xs-10 col-xs-offset-1" >
 
