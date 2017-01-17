@@ -13,20 +13,20 @@
   <div class="carousel-inner" role="listbox">
     <div class="item active">
     <!--ruby code-->
-      <%= image_tag 'slider6.jpg' %>
+      <%= image_tag 'slider6.jpg',class: 'img-responsive' %>
       <div class="carousel-caption">
         the dragon nodels from china
       </div>
     </div>
     <div class="item">
-      <%= image_tag 'slider7.jpg' %>
+      <%= image_tag 'slider7.jpg', class: 'img-responsive' %>
       <div class="carousel-caption">
         good pommes I prommise
       </div>
 
     </div>
      <div class="item">
-      <%= image_tag 'slider8.jpg' %>
+      <%= image_tag 'slider8.jpg', class: 'img-responsive' %>
       <div class="carousel-caption">
         Find the best Hamburger ever
       </div>
@@ -57,7 +57,7 @@
     <h1><%= place.name %></h1>
     <% if place.fotos.present?%>
 
-   <picture class="pull-right"> 
+   <picture class="pull-right " > 
    <%= image_tag place.fotos.last.picture%></picture>
     
     <%end%>
